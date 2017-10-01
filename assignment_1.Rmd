@@ -1,0 +1,13 @@
+---
+title: "Assignment 1"
+author: "Natalia Kalashnikova"
+date: "01 10 2017"
+output: html_document
+
+## Exercise 1
+
+## Exercise 2
+
+## Exercise 3
+
+## Exercise 4
