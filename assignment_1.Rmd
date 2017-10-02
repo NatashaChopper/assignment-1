@@ -23,8 +23,9 @@ fake_data_set <- tibble::data_frame(`Fake measurement`=fake_data_points)
 ```{r}
 ggplot2::ggplot(fake_data_set, ggplot2::aes(x=`Fake measurement`)) + ggplot2::geom_histogram(bins=5, colour="black", fill="lightgrey")
 ```
-
-
+vue que sur laxe horizontale je vois les significations de possible_outcomes je suppose que ca signifie la liste des données pour lesquelles on doit avoir un résultat
+n_data_points peut signifier laxe y - la limite jusqu'a laquelle on peut avoir les resultats
+set.seed est une fonction qui sert à créer des simulations des objets aléatoires quon peut reproduire (selon les recherches sur Internet)
 
 
 ## Exercise 3
