@@ -31,4 +31,60 @@ set.seed est une fonction qui sert à créer des simulations des objets aléatoi
 
 ## Exercise 3
 
+```{r}
+iris_groups23 <- dplyr::filter(iris, Species %in% c("versicolor", "virginica"))
+ggplot2::ggplot(iris_groups23, ggplot2::aes(x=Sepal.Width)) +
+  ggplot2::geom_histogram(colour="black", fill="lightgrey", binwidth=0.1) +
+  ggplot2::facet_grid(Species ~ .)
+```
+```{r}
+library(magrittr)
+iris_versicolor_subset <- dplyr::filter(iris,
+                                        Sepal.Width <= 2.5,
+                                        Species == "versicolor") %>%
+                          dplyr::select(Sepal.Width, Species)
+knitr::kable(iris_versicolor_subset)
+```
+```{r}
+knitr::include_graphics("20171010_113349.jpg")
+```
+```{r}
+iris_groups23 <- dplyr::filter(iris, Species %in% c("versicolor", "virginica"))
+ggplot2::ggplot(iris_groups23, ggplot2::aes(x=Sepal.Width)) +
+  ggplot2::geom_histogram(colour="black", fill="lightgrey", binwidth=0.1)
+```
+
 ## Exercise 4
+
+```{r}
+ggplot2::ggplot(stressshift::stress_shift_permit,
+                ggplot2::aes(x=Category, fill=Syllable)) +
+  ggplot2::geom_bar(position="dodge", colour="black") + 
+  ggplot2::scale_fill_brewer(palette="Set3")
+```
+```{r}
+ggplot2::ggplot(stressshift::stress_shift_permit, ggplot2::aes(x=0, fill=Syllable)) +
+  ggplot2::geom_bar(position="dodge", colour="black") + 
+  ggplot2::scale_fill_brewer(palette="Set3") +
+  ggplot2::xlab("") +
+  ggplot2::theme(axis.text.x=ggplot2::element_blank(),
+                 axis.ticks.x=ggplot2::element_blank()) +
+  ggplot2::xlim(c(-1,1))
+```
+
+##Exercise 5
+
+```{r}
+library(magrittr)
+set.seed(1)
+ver_balanced <- languageR::ver %>%
+  dplyr::group_by(SemanticClass) %>%
+  dplyr::sample_n(198)
+set.seed(NULL)
+```
+```{r}
+ggplot2::ggplot(ver_balanced, ggplot2::aes(x=Frequency)) +
+  ggplot2::geom_histogram(fill="lightgrey", colour="black", binwidth=250) +
+  ggplot2::facet_grid(SemanticClass ~ .)
+```
+
