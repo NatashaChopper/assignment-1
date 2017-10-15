@@ -53,6 +53,11 @@ iris_groups23 <- dplyr::filter(iris, Species %in% c("versicolor", "virginica"))
 ggplot2::ggplot(iris_groups23, ggplot2::aes(x=Sepal.Width)) +
   ggplot2::geom_histogram(colour="black", fill="lightgrey", binwidth=0.1)
 ```
+ Hypothesis A signifie que la difference du largeur des felurs nest pas significatif pour les differcier comme deux especes differentes.
+ Hypothesis B a linverse dit que cette difference est tres importante pour distinguer un espece de lautre.
+ 
+ Je pense que Hypothesis A est correcte parce que histogramme mixed repete plus ou moins la meme forme des deux histogrammes. On a la plus grande valeur au milieu pour les deux cas. 
+
 
 ## Exercise 4
 
@@ -71,6 +76,9 @@ ggplot2::ggplot(stressshift::stress_shift_permit, ggplot2::aes(x=0, fill=Syllabl
                  axis.ticks.x=ggplot2::element_blank()) +
   ggplot2::xlim(c(-1,1))
 ```
+Hypotheses A dit que verbe et nom sont les memes mots du niveau daccent
+Hypothesis B dit que ce ne sont pas les memes mots au niveua du stress
+je pense que ce ne sont pas les memes mots parce que le premier histogram montre une grande difference de lutilisation de laccent pour le verbe et une difference un peu moins pour le nom. De plus le histogram commun montre toujours la prefernce pour accentuation de la deuxieme syllabe, ce serait pas le cas si les mots etaient identiques
 
 ##Exercise 5
 
@@ -82,9 +90,10 @@ ver_balanced <- languageR::ver %>%
   dplyr::sample_n(198)
 set.seed(NULL)
 ```
+
 ```{r}
 ggplot2::ggplot(ver_balanced, ggplot2::aes(x=Frequency)) +
   ggplot2::geom_histogram(fill="lightgrey", colour="black", binwidth=250) +
   ggplot2::facet_grid(SemanticClass ~ .)
 ```
-
+jai pas compris la difference des histograms
